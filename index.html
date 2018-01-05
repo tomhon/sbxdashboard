@@ -119,35 +119,49 @@ SBX Tracker
 </div>
 
 <div>
-    <button onclick="updateGraph();">Refresh</button>
+    <button onclick="refreshData();">Refresh</button>
 
 </div>
 
 
 
 <script>
-        Lane1FirstAtHole= 100;
-        Lane2FirstAtHole= 100;
-        Lane3FirstAtHole= 100;
-        Lane4FirstAtHole= 100;
-        Lane5FirstAtHole= 100;
-        Lane6FirstAtHole= 100;
-        Lane1FirstAtSplit= 100;
-        Lane2FirstAtSplit= 100;
-        Lane3FirstAtSplit= 100;
-        Lane4FirstAtSplit= 100;
-        Lane5FirstAtSplit= 100;
-        Lane6FirstAtSplit= 100;
-        Lane1FirstAtFinish= 100;
-        Lane2FirstAtFinish= 100;
-        Lane3FirstAtFinish= 100;
-        Lane4FirstAtFinish= 100;
-        Lane5FirstAtFinish= 100;
-        Lane6FirstAtFinish= 100;
+function refreshData() {
+    console.log('refreshData called');
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        latestData = JSON.parse(this.responseText);
+        console.log(latestData)
+        document.getElementById('Lane1Hole').width.baseVal.value = latestData.Lane1FirstAtHole;
+        document.getElementById('Lane2Hole').width.baseVal.value = latestData.Lane2FirstAtHole;
+        document.getElementById('Lane3Hole').width.baseVal.value = latestData.Lane3FirstAtHole;
+        document.getElementById('Lane4Hole').width.baseVal.value = latestData.Lane4FirstAtHole;
+        document.getElementById('Lane5Hole').width.baseVal.value = latestData.Lane5FirstAtHole;
+        document.getElementById('Lane6Hole').width.baseVal.value = latestData.Lane6FirstAtHole;
+        document.getElementById('Lane1Split').width.baseVal.value = latestData.Lane1FirstAtSplit;
+        document.getElementById('Lane2Split').width.baseVal.value = latestData.Lane2FirstAtSplit;
+        document.getElementById('Lane3Split').width.baseVal.value = latestData.Lane3FirstAtSplit;
+        document.getElementById('Lane4Split').width.baseVal.value = latestData.Lane4FirstAtSplit;
+        document.getElementById('Lane5Split').width.baseVal.value = latestData.Lane5FirstAtSplit;
+        document.getElementById('Lane6Split').width.baseVal.value = latestData.Lane6FirstAtSplit;
+        document.getElementById('Lane1Finish').width.baseVal.value = latestData.Lane1FirstAtFinish;
+        document.getElementById('Lane2Finish').width.baseVal.value = latestData.Lane2FirstAtFinish;
+        document.getElementById('Lane3Finish').width.baseVal.value = latestData.Lane3FirstAtFinish;
+        document.getElementById('Lane4Finish').width.baseVal.value = latestData.Lane4FirstAtFinish;
+        document.getElementById('Lane5Finish').width.baseVal.value = latestData.Lane5FirstAtFinish;
+        document.getElementById('Lane6Finish').width.baseVal.value = latestData.Lane6FirstAtFinish;
+      } else {
+        console.log (this.status);
+        }
+    };
+    xhttp.open("GET", "https://sbxdataprovider.azurewebsites.net/", true);
+    xhttp.send();
+};
 
 </script>
 
-<script src="updateGraph.js"></script>
 
 </body>
 </html>

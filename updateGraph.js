@@ -1,0 +1,20 @@
+function updateGraph() {
+    document.getElementById('Lane1Hole').width.baseVal.value = Lane1FirstAtHole;
+    document.getElementById('Lane2Hole').width.baseVal.value = Lane2FirstAtHole;
+    document.getElementById('Lane3Hole').width.baseVal.value = Lane3FirstAtHole;
+    document.getElementById('Lane4Hole').width.baseVal.value = Lane4FirstAtHole;
+    document.getElementById('Lane5Hole').width.baseVal.value = Lane5FirstAtHole;
+    document.getElementById('Lane6Hole').width.baseVal.value = Lane6FirstAtHole;
+    document.getElementById('Lane1Split').width.baseVal.value = Lane1FirstAtSplit;
+    document.getElementById('Lane2Split').width.baseVal.value = Lane2FirstAtSplit;
+    document.getElementById('Lane3Split').width.baseVal.value = Lane3FirstAtSplit;
+    document.getElementById('Lane4Split').width.baseVal.value = Lane4FirstAtSplit;
+    document.getElementById('Lane5Split').width.baseVal.value = Lane5FirstAtSplit;
+    document.getElementById('Lane6Split').width.baseVal.value = Lane6FirstAtSplit;
+    document.getElementById('Lane1Finish').width.baseVal.value = Lane1FirstAtFinish;
+    document.getElementById('Lane2Finish').width.baseVal.value = Lane2FirstAtFinish;
+    document.getElementById('Lane3Finish').width.baseVal.value = Lane3FirstAtFinish;
+    document.getElementById('Lane4Finish').width.baseVal.value = Lane4FirstAtFinish;
+    document.getElementById('Lane5Finish').width.baseVal.value = Lane5FirstAtFinish;
+    document.getElementById('Lane6Finish').width.baseVal.value = Lane6FirstAtFinish;
+};

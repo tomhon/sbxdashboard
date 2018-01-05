@@ -18,11 +18,11 @@ SBX Tracker
         <rect id='Lane1Hole' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
   <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane1Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
   <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane1Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -36,11 +36,11 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane2Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane2Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -54,11 +54,11 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane3Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane3Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -73,11 +73,11 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane4Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane4Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -91,11 +91,11 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane5Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane5Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -110,36 +110,45 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane6Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane6Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
-</body>
+
+<div>
+    <button onclick="updateGraph();">Refresh</button>
+
+</div>
+
+
 
 <script>
-        Lane1FirstAtHole = 100;
-        document.getElementById('Lane1Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane2Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane3Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane4Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane5Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane6Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane1Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane2Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane3Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane4Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane5Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane6Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane1Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane2Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane3Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane4Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane5Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane6Finish').width.baseVal.value = Lane1FirstAtHole;
+        Lane1FirstAtHole= 100;
+        Lane2FirstAtHole= 100;
+        Lane3FirstAtHole= 100;
+        Lane4FirstAtHole= 100;
+        Lane5FirstAtHole= 100;
+        Lane6FirstAtHole= 100;
+        Lane1FirstAtSplit= 100;
+        Lane2FirstAtSplit= 100;
+        Lane3FirstAtSplit= 100;
+        Lane4FirstAtSplit= 100;
+        Lane5FirstAtSplit= 100;
+        Lane6FirstAtSplit= 100;
+        Lane1FirstAtFinish= 100;
+        Lane2FirstAtFinish= 100;
+        Lane3FirstAtFinish= 100;
+        Lane4FirstAtFinish= 100;
+        Lane5FirstAtFinish= 100;
+        Lane6FirstAtFinish= 100;
+
 </script>
 
+<script src="updateGraph.js"></script>
+
+</body>
 </html>
 

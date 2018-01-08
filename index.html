@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>SBX Tracker</title>
-
+        <title>SBX Tracker</title>
 </head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+
+
 
 
 <body>
-SBX Tracker
+
+    <div>
+            <form>
+        <img src="logo.png" height="80" >
+        
+                Race Codex
+                <select onClick="refreshData(name,value)" id="raceCodexDropdown" name="raceCodex">
+                        <option value="All">All</option>
+                      </select>
+                Race Phase
+                <select onClick="refreshData(name,value)" name="phaseID">
+                    <option value="All">All</option>
+                    <option value="Heat1">Heat1</option>
+                    <option value="Heat2">Heat2</option>
+                    <option value="Heat3">Heat3</option>
+                    <option value="Heat4">Heat4</option>
+                    <option value="Heat5">Heat5</option>
+                    <option value="Heat6">Heat6</option>
+                    <option value="Quarter1">Quarter1</option>
+                    <option value="Quarter2">Quarter2</option>
+                    <option value="Quarter3">Quarter3</option>
+                    <option value="Quarter4">Quarter4</option>
+                    <option value="Semi1">Semi1</option>
+                    <option value="Semi2">Semi2</option>
+                    <option value="Final">Final</option>
+                    </select>
+            
+                </form>
+
+    </div>
+    <div>
+        <svg width="100" height="30">
+            <text x="10" y="20" style="fill:black;">SBX Tracker </text>
+        </svg>
+        <svg width="100" height="30">
+            <text x="10" y="20" style="fill:green;">1st at Hole </text>
+        </svg>        
+        <svg width="100" height="30">
+            <text x="10" y="20" style="fill:green;">1st at Split </text>
+        </svg>        
+        <svg width="100" height="30">
+            <text x="10" y="20" style="fill:green;">1st at Finish </text>
+        </svg>
+    </div>
 
 <div>
  <svg width="100" height="20">
@@ -18,11 +65,11 @@ SBX Tracker
         <rect id='Lane1Hole' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
   <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane1Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
   <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane1Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -36,11 +83,11 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane2Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane2Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -54,11 +101,11 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane3Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane3Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -73,11 +120,11 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane4Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane4Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -91,11 +138,11 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane5Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane5Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
 
@@ -110,36 +157,110 @@ SBX Tracker
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane6Split' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 
     <svg width="100" height="20">
-        <rect width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <rect id='Lane6Finish' width="30" height="75" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
     </svg>
 </div>
-</body>
+
+<!-- <div>
+    <button onclick="refreshData();">Refresh</button>
+
+
+
+</div> -->
+
+
 
 <script>
-        Lane1FirstAtHole = 100;
-        document.getElementById('Lane1Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane2Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane3Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane4Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane5Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane6Hole').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane1Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane2Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane3Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane4Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane5Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane6Split').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane1Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane2Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane3Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane4Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane5Finish').width.baseVal.value = Lane1FirstAtHole;
-        document.getElementById('Lane6Finish').width.baseVal.value = Lane1FirstAtHole;
+refreshRequestRaceCodex = "All";
+refreshRequestPhaseID = "All";
+
+function refreshData(name, value) {
+    console.log('refreshData called', name, value);
+
+    if (name === 'raceCodex') {refreshRequestRaceCodex = value}
+    if (name === 'phaseID') {refreshRequestPhaseID = value}
+    refreshRequestURL = "http://sbxdataprovider.azurewebsites.net"
+    if (refreshRequestRaceCodex != 'All') {
+        refreshRequestURL += "?raceCodex=" + refreshRequestRaceCodex;
+        if (refreshRequestPhaseID != 'All') {
+            refreshRequestURL += "&phaseID=" + refreshRequestPhaseID
+            };
+        } else {
+            if (refreshRequestPhaseID != 'All') {
+                refreshRequestURL += "?phaseID=" + refreshRequestPhaseID
+                };
+        };
+   
+    console.log(refreshRequestURL);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        latestData = JSON.parse(this.responseText);
+        console.log(latestData)
+        totalFirstAtHole = latestData.Lane1FirstAtHole + latestData.Lane2FirstAtHole + latestData.Lane3FirstAtHole + latestData.Lane4FirstAtHole + latestData.Lane5FirstAtHole + latestData.Lane6FirstAtHole;
+        totalFirstAtSplit = latestData.Lane1FirstAtSplit + latestData.Lane2FirstAtSplit + latestData.Lane3FirstAtSplit + latestData.Lane4FirstAtSplit + latestData.Lane5FirstAtSplit + latestData.Lane6FirstAtSplit;
+        totalFirstAtFinish = latestData.Lane1FirstAtFinish + latestData.Lane2FirstAtFinish + latestData.Lane3FirstAtFinish + latestData.Lane4FirstAtFinish + latestData.Lane5FirstAtFinish + latestData.Lane6FirstAtFinish;
+        document.getElementById('Lane1Hole').width.baseVal.value = latestData.Lane1FirstAtHole / totalFirstAtHole * 100;
+        document.getElementById('Lane2Hole').width.baseVal.value = latestData.Lane2FirstAtHole / totalFirstAtHole * 100;
+        document.getElementById('Lane3Hole').width.baseVal.value = latestData.Lane3FirstAtHole / totalFirstAtHole * 100;
+        document.getElementById('Lane4Hole').width.baseVal.value = latestData.Lane4FirstAtHole / totalFirstAtHole * 100;
+        document.getElementById('Lane5Hole').width.baseVal.value = latestData.Lane5FirstAtHole / totalFirstAtHole * 100;
+        document.getElementById('Lane6Hole').width.baseVal.value = latestData.Lane6FirstAtHole / totalFirstAtHole * 100;
+        document.getElementById('Lane1Split').width.baseVal.value = latestData.Lane1FirstAtSplit / totalFirstAtSplit * 100;
+        document.getElementById('Lane2Split').width.baseVal.value = latestData.Lane2FirstAtSplit / totalFirstAtSplit * 100;
+        document.getElementById('Lane3Split').width.baseVal.value = latestData.Lane3FirstAtSplit / totalFirstAtSplit * 100;
+        document.getElementById('Lane4Split').width.baseVal.value = latestData.Lane4FirstAtSplit / totalFirstAtSplit * 100;
+        document.getElementById('Lane5Split').width.baseVal.value = latestData.Lane5FirstAtSplit / totalFirstAtSplit * 100;
+        document.getElementById('Lane6Split').width.baseVal.value = latestData.Lane6FirstAtSplit / totalFirstAtSplit * 100;
+        document.getElementById('Lane1Finish').width.baseVal.value = latestData.Lane1FirstAtFinish / totalFirstAtFinish * 100;
+        document.getElementById('Lane2Finish').width.baseVal.value = latestData.Lane2FirstAtFinish / totalFirstAtFinish * 100;
+        document.getElementById('Lane3Finish').width.baseVal.value = latestData.Lane3FirstAtFinish / totalFirstAtFinish * 100;
+        document.getElementById('Lane4Finish').width.baseVal.value = latestData.Lane4FirstAtFinish / totalFirstAtFinish * 100;
+        document.getElementById('Lane5Finish').width.baseVal.value = latestData.Lane5FirstAtFinish / totalFirstAtFinish * 100;
+        document.getElementById('Lane6Finish').width.baseVal.value = latestData.Lane6FirstAtFinish / totalFirstAtFinish * 100;
+      } else {
+        console.log (this.status);
+        }
+    };
+    xhttp.open("GET", refreshRequestURL, true);
+    // xhttp.setRequestHeader('Access-Control-Allow-Origin', "https://sbxdashboard.azurewebsites.net")
+    xhttp.send();
+};
+
+function loadRaceCodexData() {
+    console.log('loadRaceCodexData called');
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        latestData = JSON.parse(this.responseText);
+        console.log(latestData)
+        latestData.forEach(function(item){
+            newOption = document.createElement('option');
+            newOption.value =  item.raceCodex;
+            newOption.text =  item.raceCodex;
+            document.getElementById('raceCodexDropdown').appendChild(newOption);   
+        });
+
+      } else {
+        console.log (this.status);
+        }
+    };
+
+    xhttp.open("GET", "http://sbxdataprovider.azurewebsites.net/getCodex", true);
+    xhttp.send();
+};
+
+loadRaceCodexData();
 </script>
 
+
+</body>
 </html>
 

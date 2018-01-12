@@ -202,32 +202,63 @@ function refreshData(name, value) {
       if (this.readyState == 4 && this.status == 200) {
         console.log(this.responseText);
         latestData = JSON.parse(this.responseText);
-        console.log(latestData)
+        console.log(latestData);
         totalFirstAtHole = latestData.Lane1FirstAtHole + latestData.Lane2FirstAtHole + latestData.Lane3FirstAtHole + latestData.Lane4FirstAtHole + latestData.Lane5FirstAtHole + latestData.Lane6FirstAtHole;
         totalFirstAtSplit = latestData.Lane1FirstAtSplit + latestData.Lane2FirstAtSplit + latestData.Lane3FirstAtSplit + latestData.Lane4FirstAtSplit + latestData.Lane5FirstAtSplit + latestData.Lane6FirstAtSplit;
         totalFirstAtFinish = latestData.Lane1FirstAtFinish + latestData.Lane2FirstAtFinish + latestData.Lane3FirstAtFinish + latestData.Lane4FirstAtFinish + latestData.Lane5FirstAtFinish + latestData.Lane6FirstAtFinish;
-        document.getElementById('Lane1Hole').width.baseVal.value = latestData.Lane1FirstAtHole / totalFirstAtHole * 100;
-        document.getElementById('Lane2Hole').width.baseVal.value = latestData.Lane2FirstAtHole / totalFirstAtHole * 100;
-        document.getElementById('Lane3Hole').width.baseVal.value = latestData.Lane3FirstAtHole / totalFirstAtHole * 100;
-        document.getElementById('Lane4Hole').width.baseVal.value = latestData.Lane4FirstAtHole / totalFirstAtHole * 100;
-        document.getElementById('Lane5Hole').width.baseVal.value = latestData.Lane5FirstAtHole / totalFirstAtHole * 100;
-        document.getElementById('Lane6Hole').width.baseVal.value = latestData.Lane6FirstAtHole / totalFirstAtHole * 100;
-        document.getElementById('Lane1Split').width.baseVal.value = latestData.Lane1FirstAtSplit / totalFirstAtSplit * 100;
-        document.getElementById('Lane2Split').width.baseVal.value = latestData.Lane2FirstAtSplit / totalFirstAtSplit * 100;
-        document.getElementById('Lane3Split').width.baseVal.value = latestData.Lane3FirstAtSplit / totalFirstAtSplit * 100;
-        document.getElementById('Lane4Split').width.baseVal.value = latestData.Lane4FirstAtSplit / totalFirstAtSplit * 100;
-        document.getElementById('Lane5Split').width.baseVal.value = latestData.Lane5FirstAtSplit / totalFirstAtSplit * 100;
-        document.getElementById('Lane6Split').width.baseVal.value = latestData.Lane6FirstAtSplit / totalFirstAtSplit * 100;
-        document.getElementById('Lane1Finish').width.baseVal.value = latestData.Lane1FirstAtFinish / totalFirstAtFinish * 100;
-        document.getElementById('Lane2Finish').width.baseVal.value = latestData.Lane2FirstAtFinish / totalFirstAtFinish * 100;
-        document.getElementById('Lane3Finish').width.baseVal.value = latestData.Lane3FirstAtFinish / totalFirstAtFinish * 100;
-        document.getElementById('Lane4Finish').width.baseVal.value = latestData.Lane4FirstAtFinish / totalFirstAtFinish * 100;
-        document.getElementById('Lane5Finish').width.baseVal.value = latestData.Lane5FirstAtFinish / totalFirstAtFinish * 100;
-        document.getElementById('Lane6Finish').width.baseVal.value = latestData.Lane6FirstAtFinish / totalFirstAtFinish * 100;
+        
+        if (totalFirstAtHole != 0 ) {
+            document.getElementById('Lane1Hole').width.baseVal.value = latestData.Lane1FirstAtHole / totalFirstAtHole * 100;
+            document.getElementById('Lane2Hole').width.baseVal.value = latestData.Lane2FirstAtHole / totalFirstAtHole * 100;
+            document.getElementById('Lane3Hole').width.baseVal.value = latestData.Lane3FirstAtHole / totalFirstAtHole * 100;
+            document.getElementById('Lane4Hole').width.baseVal.value = latestData.Lane4FirstAtHole / totalFirstAtHole * 100;
+            document.getElementById('Lane5Hole').width.baseVal.value = latestData.Lane5FirstAtHole / totalFirstAtHole * 100;
+            document.getElementById('Lane6Hole').width.baseVal.value = latestData.Lane6FirstAtHole / totalFirstAtHole * 100;
+        } else {
+            document.getElementById('Lane1Hole').width.baseVal.value = 0;
+            document.getElementById('Lane2Hole').width.baseVal.value = 0;
+            document.getElementById('Lane3Hole').width.baseVal.value = 0;
+            document.getElementById('Lane4Hole').width.baseVal.value = 0;
+            document.getElementById('Lane5Hole').width.baseVal.value = 0;
+            document.getElementById('Lane6Hole').width.baseVal.value = 0;
+        };
+
+        if (totalFirstAtSplit != 0 ) { 
+            document.getElementById('Lane1Split').width.baseVal.value = latestData.Lane1FirstAtSplit / totalFirstAtSplit * 100;
+            document.getElementById('Lane2Split').width.baseVal.value = latestData.Lane2FirstAtSplit / totalFirstAtSplit * 100;
+            document.getElementById('Lane3Split').width.baseVal.value = latestData.Lane3FirstAtSplit / totalFirstAtSplit * 100;
+            document.getElementById('Lane4Split').width.baseVal.value = latestData.Lane4FirstAtSplit / totalFirstAtSplit * 100;
+            document.getElementById('Lane5Split').width.baseVal.value = latestData.Lane5FirstAtSplit / totalFirstAtSplit * 100;
+            document.getElementById('Lane6Split').width.baseVal.value = latestData.Lane6FirstAtSplit / totalFirstAtSplit * 100;
+        } else {
+            document.getElementById('Lane1Split').width.baseVal.value = 0;
+            document.getElementById('Lane2Split').width.baseVal.value = 0;
+            document.getElementById('Lane3Split').width.baseVal.value = 0;
+            document.getElementById('Lane4Split').width.baseVal.value = 0;
+            document.getElementById('Lane5Split').width.baseVal.value = 0;
+            document.getElementById('Lane6Split').width.baseVal.value = 0;
+        };
+
+        if (totalFirstAtFinish !=0 ) {
+            document.getElementById('Lane1Finish').width.baseVal.value = latestData.Lane1FirstAtFinish / totalFirstAtFinish * 100;
+            document.getElementById('Lane2Finish').width.baseVal.value = latestData.Lane2FirstAtFinish / totalFirstAtFinish * 100;
+            document.getElementById('Lane3Finish').width.baseVal.value = latestData.Lane3FirstAtFinish / totalFirstAtFinish * 100;
+            document.getElementById('Lane4Finish').width.baseVal.value = latestData.Lane4FirstAtFinish / totalFirstAtFinish * 100;
+            document.getElementById('Lane5Finish').width.baseVal.value = latestData.Lane5FirstAtFinish / totalFirstAtFinish * 100;
+            document.getElementById('Lane6Finish').width.baseVal.value = latestData.Lane6FirstAtFinish / totalFirstAtFinish * 100;
+        } else {
+            document.getElementById('Lane1Finish').width.baseVal.value = 0;
+            document.getElementById('Lane2Finish').width.baseVal.value = 0;
+            document.getElementById('Lane3Finish').width.baseVal.value = 0;
+            document.getElementById('Lane4Finish').width.baseVal.value = 0;
+            document.getElementById('Lane5Finish').width.baseVal.value = 0;
+            document.getElementById('Lane6Finish').width.baseVal.value = 0;
+        };
       } else {
-        console.log (this.status);
-        }
+          console.log(this.status);
+      }
     };
+
     xhttp.open("GET", refreshRequestURL, true);
     // xhttp.setRequestHeader('Access-Control-Allow-Origin', "https://sbxdashboard.azurewebsites.net")
     xhttp.send();
@@ -263,4 +294,3 @@ loadRaceCodexData();
 
 </body>
 </html>
-

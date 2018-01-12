@@ -7,22 +7,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+<style>
+    .floating-box {
+    display: inline-block;
+    width: 90px;
+    height: 75px;
+    margin: 10px
+        }
+</style>
 
 
 
 
 <body>
 
-    <div>
-            <form>
-        <img src="logo.png" height="80" >
-        
-                Race Codex
-                <select onchange="refreshData(name,value)" id="raceCodexDropdown" name="raceCodex">
-                        <option value="All">All</option>
+    <div class="floating-box"> <img src="logo.png" height="80" > </div>
+    <div class="floating-box">Race Codex
+                <select onchange="refreshData(name,value)" id="raceCodexDropdown" name="raceCodex" class="w3-input" >
+                        <option value="All" >All</option>
                       </select>
-                Race Phase
-                <select onchange="refreshData(name,value)" name="phaseID">
+                    </div>
+    <div class="floating-box">Race Phase
+                                <select onchange="refreshData(name,value)" name="phaseID" class="w3-input" >
                     <option value="All">All</option>
                     <option value="Heat1">Heat1</option>
                     <option value="Heat2">Heat2</option>
@@ -38,9 +44,8 @@
                     <option value="Semi2">Semi2</option>
                     <option value="Final">Final</option>
                     </select>
+                    </div>
             
-                </form>
-
     </div>
     <div>
         <svg width="50" height="30">
